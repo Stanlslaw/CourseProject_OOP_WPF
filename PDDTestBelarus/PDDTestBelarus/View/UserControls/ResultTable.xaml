@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="PDDTestBelarus.View.UserControls.ResultTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:PDDTestBelarus.View.UserControls"
+             mc:Ignorable="d"
+             MinHeight="400"
+             MinWidth="600"
+             Background="#3c63ff"
+             d:DesignHeight="auto" d:DesignWidth="auto">
+    <Grid Margin="10 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="White">
+            <UniformGrid Grid.Row="0" Columns="4">
+                <TextBlock FontSize="14" Foreground="Khaki" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    № Задачи
+                </TextBlock>
+                <TextBlock FontSize="14" Foreground="Khaki" FontWeight="Bold"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    Ваш ответ
+                </TextBlock>
+                <TextBlock FontSize="14" Foreground="Khaki" FontWeight="Bold"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    Правильный ответ
+                </TextBlock>
+                <TextBlock FontSize="14" Foreground="Khaki" FontWeight="Bold"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    Результат
+                </TextBlock>
+            </UniformGrid>
+        </Border>
+        <UniformGrid Grid.Row="1" Rows="10" Margin="0 10 " x:Name="TableAnswerRows">
+            <!-- <UniformGrid Columns="4"> -->
+            <!--     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" -->
+            <!--                FontSize="12" Foreground="White" FontWeight="DemiBold"> -->
+            <!--         1 -->
+            <!--     </TextBlock> -->
+            <!--     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" -->
+            <!--                FontSize="12" Foreground="White" FontWeight="DemiBold"> -->
+            <!--         2 -->
+            <!--     </TextBlock> -->
+            <!--     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" -->
+            <!--                FontSize="12" Foreground="White" FontWeight="DemiBold"> -->
+            <!--         3 -->
+            <!--     </TextBlock> -->
+            <!--     <Image Source="/Images/right.png" MaxHeight="24" MaxWidth="24"></Image> -->
+            <!-- </UniformGrid> -->
+        </UniformGrid>
+        <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="White">
+            <UniformGrid Grid.Row="0" Columns="3">
+                <UniformGrid Columns="2">
+                    <UniformGrid Columns="2">
+                        <Image Source="/Images/right.png" MaxWidth="24" MaxHeight="24"></Image>
+                        <TextBlock VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="White">
+                            <Run Text="- "></Run>
+                            <Run x:Name="NumOfCorrect" Text="0"></Run>
+                        </TextBlock>
+                    </UniformGrid>
+                    <UniformGrid Columns="2">
+                        <Image Source="/Images/wrong.png" MaxWidth="24" MaxHeight="24"></Image>
+                        <TextBlock VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="White">
+                            <Run Text="- "></Run>
+                            <Run x:Name="NumOfInCorrect" Text="0"></Run>
+                        </TextBlock>
+                    </UniformGrid>
+                </UniformGrid>
+                <Grid>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="DemiBold">
+                        <Run Text="Время: " Foreground="Khaki" ></Run>
+                        <Run x:Name="ElapsedTime" Text="00:00" Foreground="White"></Run>
+                    </TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock x:Name="TextResult" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontSize="14" Foreground="Khaki" FontWeight="DemiBold">
+                            Экзамен сдан
+                    </TextBlock>
+                </Grid>
+            </UniformGrid>
+        </Border>
+       
+    </Grid>
+</UserControl>

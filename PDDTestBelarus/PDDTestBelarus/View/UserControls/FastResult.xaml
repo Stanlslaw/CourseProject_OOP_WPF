@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="PDDTestBelarus.View.UserControls.FastResult"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:PDDTestBelarus.View.UserControls"
+             mc:Ignorable="d"
+             MinHeight="400"
+             MinWidth="600"
+             d:DesignHeight="Auto" d:DesignWidth="Auto">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="0.6*"></RowDefinition>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="1" BorderBrush="White" BorderThickness="3" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10"/>
+                    </Border.Effect>
+                    <Grid Background="White" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"></RowDefinition>
+                            <RowDefinition Height="6*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="Red"
+                                   FontSize="36" FontWeight="Bold">Экзамен не</TextBlock>
+                        <TextBlock Grid.Row="1" VerticalAlignment="Top"  HorizontalAlignment="Center" Foreground="Red"
+                                   FontSize="64" FontWeight="Bold">Сдан!</TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <Border Grid.Row="1" BorderThickness="0 1 0 0" BorderBrush="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <UniformGrid Grid.Column="0" Rows="4" Margin="30 0  0 0">
+                    <Border BorderThickness=" 0 0 0 1" BorderBrush="Gray" >
+                        <TextBlock  FontSize="14">Статистика:</TextBlock>
+                    </Border>
+                    <DockPanel>
+                        <TextBlock>Количество задач:</TextBlock>
+                        <TextBlock HorizontalAlignment="Right" >10</TextBlock>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock>Количество правильных ответов:</TextBlock>
+                        <TextBlock HorizontalAlignment="Right" Foreground="Green">10</TextBlock>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock>Количество неправильных ответов:</TextBlock>
+                        <TextBlock HorizontalAlignment="Right" Foreground="Red">10</TextBlock>
+                    </DockPanel>
+                </UniformGrid>
+                <Grid Grid.Column="1"></Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

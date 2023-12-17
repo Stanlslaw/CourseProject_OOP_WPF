@@ -1,0 +1,104 @@
+﻿<Page x:Class="PDDTestBelarus.View.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PDDTestBelarus.View"
+      mc:Ignorable="d"
+      MinWidth="720"
+      MinHeight="405"
+      x:Name="AboutPageView"
+      Title="Test" Width="Auto" Height="Auto" >
+      <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="0.04*"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="0.04*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Background="#FF0700" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
+           
+                        <TextBlock Foreground="White" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                        >
+                                Программное средство "Тесты ПДД"
+                        </TextBlock>
+                </Grid>
+                <Grid Background="Red"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" >
+           
+                        <TextBlock 
+                                Foreground="White"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                        >
+                                ©УО "БГТУ" ФИТ 3-2 Скалкович Станислав Леонидович
+                        </TextBlock>
+                </Grid>
+                
+                <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="5*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition  Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                         <Grid
+                Grid.Column="1"
+                Grid.Row="1"
+                Background="White"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+              
+                <Border BorderBrush="White" BorderThickness="3" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10"/>
+                    </Border.Effect>
+                </Border>
+                <Border Background="White" BorderBrush="White" BorderThickness="2" Margin="2">
+                  <Grid>
+                      <Grid.RowDefinitions>
+                          <RowDefinition Height="0.05*"></RowDefinition>
+                          <RowDefinition Height="0.95*"></RowDefinition>
+                      </Grid.RowDefinitions>
+                      <TextBlock Grid.Row="0" Foreground="Black" Padding="8 0 " VerticalAlignment="Center">
+                          О программе...
+                      </TextBlock>
+                          <Grid Grid.Row="1">
+                                  <Grid.ColumnDefinitions>
+                                          <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                          <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                  </Grid.ColumnDefinitions>
+                                  <Grid.RowDefinitions>
+                                          <RowDefinition Height="0.25*"></RowDefinition>
+                                          <RowDefinition Height="0.6*"></RowDefinition>
+                                  </Grid.RowDefinitions>
+                                  <Grid.Background>
+                                          <ImageBrush ImageSource="/Images/AboutImage.jpg"></ImageBrush>
+                                  </Grid.Background>
+                                  <UniformGrid Grid.Column="0" Columns="1">
+                                          <TextBlock Foreground="White" FontSize="32" TextAlignment="Center">Тесты ПДД</TextBlock>
+                                          <TextBlock Foreground="White" TextAlignment="Center">Курсовая работа WPf 2023</TextBlock>
+                                  </UniformGrid>
+                                
+                                  <UniformGrid Grid.Column="1" Columns="1">
+                                          <TextBlock Foreground="White" FontSize="12" VerticalAlignment="Center">Версия 1.0</TextBlock>
+                                          <TextBlock Foreground="White" FontSize="12" VerticalAlignment="Center">Скалкович Станислав Леонидович</TextBlock>
+                                          <TextBlock Foreground="White" FontSize="12" VerticalAlignment="Center">Email: stas.skalkovich@gmail.com</TextBlock>
+                                          <TextBlock Foreground="White" FontSize="12" VerticalAlignment="Center">©УО "БГТУ"</TextBlock>
+                                          <TextBlock Foreground="White" FontSize="12"  VerticalAlignment="Center">ФИТ 3-2</TextBlock>
+                                  </UniformGrid>
+                          </Grid>
+                  </Grid>
+                </Border>
+              </Grid>
+            </Grid>
+        </Grid>
+</Page>

@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+
+namespace AddQuestionPanel.Models;
+
+public partial class PddContext : DbContext
+{
+    public PddContext()
+    {
+    }
+
+    public PddContext(DbContextOptions<PddContext> options)
+        : base(options)
+    {
+    }
+
+    public virtual DbSet<Answer> Answers { get; set; }
+
+    public virtual DbSet<Question> Questions { get; set; }
+
+    public virtual DbSet<QuestionDescription> QuestionDescriptions { get; set; }
+
+    public virtual DbSet<Topic> Topics { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlite("Data Source=PDD.db");
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Answer>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+        });
+
+        modelBuilder.Entity<Question>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+        });
+
+        modelBuilder.Entity<QuestionDescription>(entity =>
+        {
+            entity.ToTable("QuestionDescription");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+        });
+
+        modelBuilder.Entity<Topic>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+        });
+
+        OnModelCreatingPartial(modelBuilder);
+    }
+
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+}

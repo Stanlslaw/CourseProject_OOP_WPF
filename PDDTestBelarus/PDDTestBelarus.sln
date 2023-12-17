@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDDTestBelarus", "PDDTestBelarus\PDDTestBelarus.csproj", "{74751BE4-DD12-4A3B-BD41-DB0A28D548BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74751BE4-DD12-4A3B-BD41-DB0A28D548BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74751BE4-DD12-4A3B-BD41-DB0A28D548BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74751BE4-DD12-4A3B-BD41-DB0A28D548BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74751BE4-DD12-4A3B-BD41-DB0A28D548BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94197375-0357-472A-89E9-8C611D93BB07}
+	EndGlobalSection
+EndGlobal
