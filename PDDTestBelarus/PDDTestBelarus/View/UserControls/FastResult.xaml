@@ -34,9 +34,9 @@
                             <RowDefinition Height="4*"></RowDefinition>
                             <RowDefinition Height="6*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="Red"
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" x:Name="ExamText" HorizontalAlignment="Center" Foreground="Red"
                                    FontSize="36" FontWeight="Bold">Экзамен не</TextBlock>
-                        <TextBlock Grid.Row="1" VerticalAlignment="Top"  HorizontalAlignment="Center" Foreground="Red"
+                        <TextBlock Grid.Row="1" VerticalAlignment="Top" x:Name="PassedText"  HorizontalAlignment="Center" Foreground="Red"
                                    FontSize="64" FontWeight="Bold">Сдан!</TextBlock>
                     </Grid>
                 </Border>
@@ -58,11 +58,11 @@
                     </DockPanel>
                     <DockPanel>
                         <TextBlock>Количество правильных ответов:</TextBlock>
-                        <TextBlock HorizontalAlignment="Right" Foreground="Green">10</TextBlock>
+                        <TextBlock x:Name="NumOfCorrect" HorizontalAlignment="Right" Foreground="Green">10</TextBlock>
                     </DockPanel>
                     <DockPanel>
                         <TextBlock>Количество неправильных ответов:</TextBlock>
-                        <TextBlock HorizontalAlignment="Right" Foreground="Red">10</TextBlock>
+                        <TextBlock  x:Name="NumOfInCorrect" HorizontalAlignment="Right" Foreground="Red">10</TextBlock>
                     </DockPanel>
                 </UniformGrid>
                 <Grid Grid.Column="1"></Grid>

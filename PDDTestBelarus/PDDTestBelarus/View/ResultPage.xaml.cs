@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using PDDTestBelarus.Models;
@@ -15,6 +16,7 @@ public partial class ResultPage : Page
     private int _selectedItem = 0;
     private UniformGrid Menu;
     private List<UniformGrid> MenuItems;
+    public List<QuestionData> results;
     public int SelectedItem
     {
         get
@@ -38,10 +40,11 @@ public partial class ResultPage : Page
         }
     }
 
-    public ResultPage()
+    public ResultPage(List<QuestionData> results)
     {
         InitializeComponent();
-        table = new ResultTable();
+        this.results = results;
+        table = new ResultTable(results);
         Menu = table.TableAnswerRows;
         MenuItems = Menu.Children.OfType<UniformGrid>().ToList();
         TableContainer.Children.Add(table);

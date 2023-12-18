@@ -18,13 +18,13 @@ public partial class Question : UserControl
     public List<Answer> answers;
     public string ImagePath { get; set; }
   
-    public Question(string questionText,List<Answer> an,string imagePath)
+    public Question(QuestionData questionData,List<Answer> an)
     {
         InitializeComponent();
-        QuestionText.Text = questionText;
+        QuestionText.Text = questionData.Question.QuestionText;
         answers = an;
-        ImagePath = imagePath;
-        QuestionImage.Source = new BitmapImage(new Uri(imagePath));
+        ImagePath = questionData.Question.Image;
+        QuestionImage.Source = new BitmapImage(new Uri(ImagePath));
         CreateAnswerList(an);
     }
 
@@ -58,7 +58,7 @@ public partial class Question : UserControl
             }
             AnswerInput.Background = Brushes.OrangeRed;
         }
-
+        
         return false;
     }
     public void SetAnswer(int num,bool changeFlag=false)

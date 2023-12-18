@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using PDDTestBelarus.Models;
 using PDDTestBelarus.View;
 using PDDTestBelarus.View.UserControls;
 using PDDTestBelarus.ViewModel;
@@ -174,16 +175,25 @@ namespace PDDTestBelarus
                     else
                     {
                        page.numPanel.ChangeColor(page.currentQuestionNum,isRight??false);
-                        
+                       QuestionData currentQuestion = page.questions[page.currentQuestionNum-1];
+                       if (isRight??false)
+                       {
+                           currentQuestion.result = true;
+                           page.results.Add(currentQuestion);
+                       }
+                       else
+                       {
+                           currentQuestion.result = false;
+                           page.results.Add(currentQuestion);
+                       }
                        if (page.currentQuestionNum >= 10)
                        {
                            if (showFastResult)
                            {
-                               page.QuestionContainer.Children.Clear();
-                               page.QuestionContainer.Children.Add(new FastResult());
+                               page.ShowFastResults();
                                if (stopTest)
                                {
-                                   Context.CurrentPage = new ResultPage();
+                                   page.GoToResultPage();
                                    stopTest = !stopTest;
                                    showFastResult = !showFastResult;
                                    break;
@@ -195,6 +205,8 @@ namespace PDDTestBelarus
                            showFastResult = !showFastResult;
                            break;
                        }
+
+                    
                        if (goToNextQuestionFlag)
                        {
                           

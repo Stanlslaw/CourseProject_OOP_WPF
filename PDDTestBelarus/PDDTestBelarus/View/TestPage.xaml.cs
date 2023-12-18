@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using PDDTestBelarus.Models;
@@ -16,12 +17,14 @@ public partial class TestPage : Page
     public TopQuestionNumPanel numPanel;
     public int currentQuestionNum=1;
     public List<QuestionData> questions;
+    public List<QuestionData> results;
     public TestPage(MainViewModel context)
     {
         InitializeComponent();
         Context = context;
+        results = new List<QuestionData>();
         questions= context.GetQuestionsForTest();
-        question = new Question(questions[0].Question.QuestionText,questions[0].asnwers,questions[0].Question.Image);
+        question = new Question(questions[0],questions[0].asnwers);
         bottomTestHint = new BottomTestHint();
         numPanel = new TopQuestionNumPanel(10);
         TimerContainer.Children.Add(new TicketTime(true,onTimeIsGone));
@@ -33,19 +36,29 @@ public partial class TestPage : Page
 
     public void onTimeIsGone()
     {
-        Context.CurrentPage = new ResultPage();
+        Context.CurrentPage = new ResultPage(results);
     }
 
     public void GoToNextQuestion()
     {
-        question = new Question(
-            questions[currentQuestionNum].Question.QuestionText,
-            questions[currentQuestionNum].asnwers,
-            questions[currentQuestionNum].Question.Image);
+        question = new Question(questions[currentQuestionNum],questions[currentQuestionNum].asnwers);
         QuestionContainer.Children.RemoveAt(0);
         QuestionContainer.Children.Add(question);
         bottomTestHint.ShowHowGiveAnswer();
         currentQuestionNum++;
     }
-    
+
+    public void ShowFastResults()
+    {
+        results = results.Distinct().ToList();
+        QuestionContainer.Children.Clear();
+        QuestionContainer.Children.Add(new FastResult(results));
+    }
+
+   
+    public void GoToResultPage()
+    {
+        results = results.Distinct().ToList();
+        Context.CurrentPage = new ResultPage(results);
+    }
 }
