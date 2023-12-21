@@ -15,7 +15,7 @@
                 <RowDefinition Height="0.8*"></RowDefinition>
                 <RowDefinition Height="0.2*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Padding="30 0" x:Name="QuestionText" Grid.Row="0"></TextBlock>
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Padding="30 0" x:Name="QuestionText" Grid.Row="0"></TextBlock>
             <UniformGrid Grid.Row="1" Columns="2">
                 <Image VerticalAlignment="Top" x:Name="QuestionImage" MaxWidth="400" MaxHeight="300"></Image>
                 <UniformGrid  Columns="1" Name="AnswersContainer" MaxHeight="400">

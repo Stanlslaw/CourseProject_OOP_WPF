@@ -36,11 +36,11 @@ public class MainViewModel:ViewModelBase
         }
     }
 
-    private PddContext db;
+    public PddContext db;
     
     public MainViewModel()
     {
-        Home = new HomePage();
+        Home = new HomePage(this);
         Exit = new ExitPage();
         About = new AboutPage();
         CurrentPage = Home;
@@ -54,7 +54,7 @@ public class MainViewModel:ViewModelBase
        foreach (var question in questions)
        {
            QuestionData qd = new();
-           qd.Question = question;
+           qd.Question = new Question(){Id=question.Id,Image = question.Image,QuestionText = RSAEncryption.Decrypt(question.QuestionText),TopicId = question.TopicId};
            qd.questionDescription = db.QuestionDescriptions.FirstOrDefault(q => q.QuestionId == qd.Question.Id);
            qd.asnwers = db.Answers.Where((a) => a.QuestionId == qd.Question.Id).ToList();
            qdList.Add(qd);

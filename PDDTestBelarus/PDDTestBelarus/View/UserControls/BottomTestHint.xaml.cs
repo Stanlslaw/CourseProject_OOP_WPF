@@ -22,4 +22,15 @@ public partial class BottomTestHint : UserControl
     {
         TestHint.Text = "Для завершения теста нажмите - ";
     }
+
+    public void ShowHowOpen()
+    {
+        TestHint.Text = "Чтобы увидеть пояснения нажмите - ";
+        KeyName.Text = "Пробел";
+    }
+    public void ShowHowClose()
+    {
+        TestHint.Text = "Чтобы скрыть пояснения нажмите -";
+        KeyName.Text = "Пробел или ESC";
+    }
 }

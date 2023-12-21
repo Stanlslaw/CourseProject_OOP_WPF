@@ -15,29 +15,18 @@ public class KeyController:Controller
     {
         _dbContext = dbContext;
     }
-    [HttpPost]
-    [Route("addkey")]
-    public async Task AddNewKey(string? key,string? secretKey)
-    {
-
-        if (secretKey == await System.IO.File.ReadAllTextAsync("./SecretString.txt"))
-        {
-         
-            _dbContext.Keys.Add(new Key()
-                {Id = new Guid().ToString(), isActive = false, KeyProp = Guid.Parse(key).ToString()});
-        }
-    }
     [HttpGet]
     [Route("activekey")]
-    public async Task<IActionResult> ActivateProduct(string? key)
+    public async Task<IActionResult> ActivateProduct(string? key,string? uuid)
     {
         Key? _key= _dbContext.Keys.FirstOrDefault(k => k.KeyProp == Guid.Parse(key).ToString());
-        if (_key == null)
+        if (_key == null||_key.isActive==true)
         {
-            return Json(false);
+            return Json(null);
         }
 
         _key.isActive = true;
+        
         return Json(true);
     }
 }

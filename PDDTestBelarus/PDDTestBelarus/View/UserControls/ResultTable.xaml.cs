@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -16,10 +17,12 @@ public partial class ResultTable : UserControl
 {
     public int incorrect = 0;
     private List<QuestionData> results;
-    public ResultTable(List<QuestionData> results)
+    private List<int> userAnswers;
+    public ResultTable(List<QuestionData> results,int elapsedTime,List<int>? userAnswers)
     {
         InitializeComponent();
         this.results = results;
+        this.userAnswers = userAnswers;
         FillTable();
         if (IsPassed(this.results))
         {
@@ -29,13 +32,26 @@ public partial class ResultTable : UserControl
         {
             TextResult.Text = "Экзамен не сдан";
         }
-        ShowStatictics();
+        ShowStatictics(elapsedTime);
     }
 
     public void FillTable()
     {
-        for (int i = 0; i < 10; i++)
+        if (results.Count == 0)
         {
+            TextBlock tb = new TextBlock();
+            tb.Text = "Нет ответов";
+            tb.HorizontalAlignment = HorizontalAlignment.Center;
+            tb.VerticalAlignment = VerticalAlignment.Center;
+            TableAnswerRows.Rows = 1;
+            TableAnswerRows.Children.Add(tb);
+            return;
+        }
+        TableAnswerRows.Rows = 10;
+        for (int i = 0; i < results.Count; i++)
+        {
+            int correctAnswerInd =results[i].asnwers.IndexOf(results[i].asnwers.FirstOrDefault(ans=>ans.IsCorrect==1));
+            int[] rowData = {i+1,userAnswers[i],correctAnswerInd+1};
             UniformGrid ug = new UniformGrid();
             ug.Columns = 4;
             for (int j = 0; j < 3; j++)
@@ -46,7 +62,7 @@ public partial class ResultTable : UserControl
                 tb.FontSize = 12;
                 tb.Foreground = Brushes.White;
                 tb.FontWeight=FontWeights.DemiBold;
-                tb.Text = i.ToString();
+                tb.Text = rowData[j].ToString();
                 ug.Children.Add(tb);
             }
 
@@ -54,11 +70,11 @@ public partial class ResultTable : UserControl
             BitmapImage bitmap;
             if ((bool)results[i].result)
             {
-                bitmap = new BitmapImage(new Uri("pack://application:,,,/Images/right.png"));
+                bitmap = new BitmapImage(new Uri("pack://application:,,,/Icons/right.png"));
             }
             else
             {
-                 bitmap = new BitmapImage(new Uri("pack://application:,,,/Images/wrong.png"));
+                 bitmap = new BitmapImage(new Uri("pack://application:,,,/Icons/wrong.png"));
             }
           
            
@@ -69,15 +85,20 @@ public partial class ResultTable : UserControl
             TableAnswerRows.Children.Add(ug);
         }
     }
-    public void ShowStatictics()
+    public void ShowStatictics(int elapsedTime)
     {
-        NumOfCorrect.Text = (10 - incorrect).ToString();
+        NumOfCorrect.Text = (results.Count - incorrect).ToString();
         NumOfInCorrect.Text = incorrect.ToString();
+        ElapsedTimeMinutes.Text = ((int)(15*60-elapsedTime) / 60).ToString("00");
+       ElapsedTimeSeconds.Text = ((15*60-elapsedTime) % 60).ToString("00");
     }
 
     public bool IsPassed(List<QuestionData> results)
     {
-      
+        if (results.Count<9)
+        {
+            return false;
+        }
         foreach (var result in results)
         {
             if (!(result.result??false))

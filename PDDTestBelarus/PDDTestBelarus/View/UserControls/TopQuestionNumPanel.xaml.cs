@@ -4,16 +4,24 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using PDDTestBelarus.Models;
 
 namespace PDDTestBelarus.View.UserControls;
 
 public partial class TopQuestionNumPanel : UserControl
 {
+    private List<QuestionData> results;
     private List<Grid> Elements = new();
-    public TopQuestionNumPanel(int questionsNum)
+    public TopQuestionNumPanel(int questionsNum,List<QuestionData>? results=null,int selected=-1)
     {
         InitializeComponent();
         FillPanelByElems(questionsNum);
+        this.results = results;
+        if (this.results != null)
+        {
+            FillColorAfterTest(selected);
+        }
+        
     }
 
     public void FillPanelByElems(int num)
@@ -54,5 +62,29 @@ public partial class TopQuestionNumPanel : UserControl
                 el.Background = Brushes.Red;
             }
         }
+    }
+
+    private void FillColorAfterTest(int selected)
+    {
+            for (int i = 0; i < results.Count; i++)
+            {
+                ChangeColor(i+1,results[i].result??false);
+                if (i == selected)
+                {
+                    SolidColorBrush scb;
+                    if (results[i].result ?? false)
+                    {
+                        scb = new SolidColorBrush(Color.FromArgb(180, 0, 255, 0));
+                      
+                    }
+                    else
+                    {
+                        scb = new SolidColorBrush(Color.FromArgb(180, 255, 0, 0));
+                    }
+                    ((Grid)NumPanel.Children[(int)selected]).Background=scb;
+                    ((Grid)NumPanel.Children[(int)selected]).Margin = new Thickness(8);
+                    ((TextBlock)((Grid)NumPanel.Children[(int)selected]).Children[0]).Foreground = Brushes.White;
+                }
+            }
     }
 }

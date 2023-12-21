@@ -45,9 +45,9 @@ public partial class HomePage : Page
     public List<Border> MenuItems;
 
     public UniformGrid Menu;
-    public HomePage()
+    public HomePage(MainViewModel mainViewModel)
     {
-        DataContext = ((MainWindow)Application.Current.MainWindow).DataContext;
+        DataContext = mainViewModel;
         InitializeComponent();
         Menu = HomeMenu;
         MenuItems = Menu.Children.OfType<Border>().ToList();

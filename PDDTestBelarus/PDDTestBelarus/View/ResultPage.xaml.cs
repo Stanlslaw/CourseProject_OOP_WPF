@@ -17,6 +17,7 @@ public partial class ResultPage : Page
     private UniformGrid Menu;
     private List<UniformGrid> MenuItems;
     public List<QuestionData> results;
+    public List<int>? userAnswers;
     public int SelectedItem
     {
         get
@@ -40,15 +41,20 @@ public partial class ResultPage : Page
         }
     }
 
-    public ResultPage(List<QuestionData> results)
+    public ResultPage(List<QuestionData> results,int elapsedTime,List<int>? userAnswers)
     {
         InitializeComponent();
         this.results = results;
-        table = new ResultTable(results);
+        this.userAnswers = userAnswers;
+        table = new ResultTable(results,elapsedTime,userAnswers);
         Menu = table.TableAnswerRows;
         MenuItems = Menu.Children.OfType<UniformGrid>().ToList();
         TableContainer.Children.Add(table);
-        ChangeStyleProperty(MenuItems[SelectedItem],true);
+        if (this.results.Count > 0)
+        {
+            ChangeStyleProperty(MenuItems[SelectedItem],true);
+        }
+    
     }
     
     public async void OnArrowUpDown(object sender, KeyEventArgs e)

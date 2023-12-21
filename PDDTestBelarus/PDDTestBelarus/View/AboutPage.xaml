@@ -81,7 +81,7 @@
                                           <RowDefinition Height="0.6*"></RowDefinition>
                                   </Grid.RowDefinitions>
                                   <Grid.Background>
-                                          <ImageBrush ImageSource="/Images/AboutImage.jpg"></ImageBrush>
+                                          <ImageBrush ImageSource="/Icons/AboutImage.jpg"></ImageBrush>
                                   </Grid.Background>
                                   <UniformGrid Grid.Column="0" Columns="1">
                                           <TextBlock Foreground="White" FontSize="32" TextAlignment="Center">Тесты ПДД</TextBlock>

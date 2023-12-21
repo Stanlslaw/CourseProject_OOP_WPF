@@ -16,26 +16,35 @@ public partial class Question : UserControl
 
     public int? currentAnswer=null;
     public List<Answer> answers;
+    private bool shuffle;
+    private List<int>? userAnswers;
     public string ImagePath { get; set; }
   
-    public Question(QuestionData questionData,List<Answer> an)
+    public Question(QuestionData questionData,List<Answer> an,List<int>? userAnswers,bool shuffle=true)
     {
         InitializeComponent();
         QuestionText.Text = questionData.Question.QuestionText;
         answers = an;
+        this.userAnswers = userAnswers;
+        this.shuffle = shuffle;
         ImagePath = questionData.Question.Image;
-        QuestionImage.Source = new BitmapImage(new Uri(ImagePath));
-        CreateAnswerList(an);
+        QuestionImage.Source = new BitmapImage(new Uri(ImagePath,UriKind.RelativeOrAbsolute));
+        CreateAnswerList(answers);
     }
 
 
     public void CreateAnswerList(List<Answer> answers)
     {
-        Shuffle(answers);
+        if (shuffle)
+        {
+            Shuffle(answers);
+        }
 
         foreach (var (answer, i) in answers.Select((a, index) => (a, index)))
         {
             var tb = new TextBlock();
+            tb.FontWeight = FontWeights.DemiBold;
+            tb.FontSize = 16;
             tb.Text = $"{i + 1}. {answer.AnswerText}";
             tb.Uid = answer.Id.ToString();
             tb.VerticalAlignment = VerticalAlignment.Center;
@@ -45,10 +54,12 @@ public partial class Question : UserControl
 
     public bool? IsRightAnswer()
     {
+      
         if (currentAnswer == null)
         {
             return null;
         }
+       
         foreach (var (answer, i) in answers.Select((a, index) => (a, index)))
         {
             if (Convert.ToBoolean(answer.IsCorrect) && currentAnswer == i + 1)
@@ -88,6 +99,29 @@ public partial class Question : UserControl
             T value = list[k];
             list[k] = list[n];
             list[n] = value;
+        }
+    }
+
+    public void SetAnswersColorAfterTest(List<Answer> answers, int selectedItem)
+    {
+        AnswersContainer.Children.Clear();
+        foreach (var (answer, i) in answers.Select((a, index) => (a, index)))
+        {
+            var tb = new TextBlock();
+            if (i == selectedItem-1)
+            {
+                tb.Foreground = Brushes.Red;
+            }
+            if (answer.IsCorrect==1)
+            {
+                tb.Foreground = Brushes.Green;
+            }
+            tb.FontWeight = FontWeights.DemiBold;
+            tb.FontSize = 16;
+            tb.Text = $"{i + 1}. {answer.AnswerText}";
+            tb.Uid = answer.Id.ToString();
+            tb.VerticalAlignment = VerticalAlignment.Center;
+            AnswersContainer.Children.Add(tb);
         }
     }
 }

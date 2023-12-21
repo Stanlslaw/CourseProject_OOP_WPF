@@ -9,7 +9,7 @@
     <Grid>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="left" Padding=" 20 0 0 0">
             <Run x:Name="TestHint"></Run>
-            <Run Text=" Enter"></Run>
+            <Run x:Name="KeyName" Text=" Enter"></Run>
         </TextBlock>
     </Grid>
 </UserControl>

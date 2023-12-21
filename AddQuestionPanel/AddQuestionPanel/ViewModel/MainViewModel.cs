@@ -39,7 +39,7 @@ public class MainViewModel
       {
           Id = id,
           TopicId = page.GetTopicId(),
-          QuestionText = page.GetQuestionText(),
+          QuestionText = RSAEncryption.Encrypt(page.GetQuestionText()),
           Image = page.GetQuestionImage()
       };
       List<Answer> answers = page.GetAnswers();
@@ -48,7 +48,7 @@ public class MainViewModel
           Id = id,
           QuestionId =id,
           BodyText = page.GetDescText(),
-          HeaderText = page.GetDescText()
+          HeaderText = page.GetDescHeader()
       };
       db.Questions.Add(question);
       db.QuestionDescriptions.Add(desc);

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\PDDTestBelarus\PDDTestBelarus\App.xaml
-13-695319860
-
-24580758953
+16-174469323
+111447933165
+28-989020345
 2221038690510
-MainWindow.xaml;View\AboutPage.xaml;View\ExitPage.xaml;View\HomePage.xaml;View\ResultPage.xaml;View\Styles\TextBlockStyle.xaml;View\TestPage.xaml;View\UserControls\BottomTestHint.xaml;View\UserControls\FastResult.xaml;View\UserControls\Question.xaml;View\UserControls\ResultTable.xaml;View\UserControls\TicketTime.xaml;View\UserControls\TopQuestionNumPanel.xaml;
+ActivationWindow.xaml;MainWindow.xaml;View\AboutPage.xaml;View\AfterTestPage.xaml;View\ExitPage.xaml;View\HomePage.xaml;View\ResultPage.xaml;View\Styles\TextBlockStyle.xaml;View\TestPage.xaml;View\TopicsPage.xaml;View\UserControls\BottomTestHint.xaml;View\UserControls\FastResult.xaml;View\UserControls\Question.xaml;View\UserControls\ResultTable.xaml;View\UserControls\TicketTime.xaml;View\UserControls\TopQuestionNumPanel.xaml;
 
 False
 

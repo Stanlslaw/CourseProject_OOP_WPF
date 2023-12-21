@@ -55,6 +55,16 @@ namespace PDDTestBelarus
                     ResultPageHandler(sender,e);
                     break;
                 }
+                case "TopicsPageView":
+                {
+                    TopicsPageHandler(sender,e);
+                    break;
+                }
+                case "AfterTestPageView":
+                {
+                    AfterTestPageHandler(sender,e);
+                    break;
+                }
                 default: return;
             }
         }
@@ -82,6 +92,40 @@ namespace PDDTestBelarus
                 case Key.Z:
                 {
                     Context.CurrentPage=Context.About;
+                    break;
+                }
+                case Key.Enter:
+                {
+                    if (page.SelectedItem == 0)
+                    {
+                        Context.CurrentPage = new TestPage(Context);
+                    }
+                    else if (page.SelectedItem == 1)
+                    {
+                        Context.CurrentPage = new TopicsPage(Context);
+                    }
+                    break;
+                }
+            }
+        }
+        public void TopicsPageHandler(object sender, KeyEventArgs e)
+        {
+            TopicsPage page = (TopicsPage)Context.CurrentPage;
+            switch (e.Key)
+            {
+                case Key.Escape:
+                {
+                    Context.CurrentPage = Context.Home;
+                    break;
+                }
+                case Key.Up:
+                {
+                    page.OnArrowUpDown(sender, e);
+                    break;
+                }
+                case Key.Down:
+                {
+                    page.OnArrowUpDown(sender, e);
                     break;
                 }
                 case Key.Enter:
@@ -193,6 +237,7 @@ namespace PDDTestBelarus
                                page.ShowFastResults();
                                if (stopTest)
                                {
+                                   page.userAnswers?.Add((int)page.question.currentAnswer);
                                    page.GoToResultPage();
                                    stopTest = !stopTest;
                                    showFastResult = !showFastResult;
@@ -209,7 +254,7 @@ namespace PDDTestBelarus
                     
                        if (goToNextQuestionFlag)
                        {
-                          
+                           page.userAnswers?.Add((int)page.question.currentAnswer);
                            page.GoToNextQuestion();
                            goToNextQuestionFlag = false;
                            break;
@@ -243,8 +288,41 @@ namespace PDDTestBelarus
                     Context.CurrentPage = Context.Home;
                     break;
                 }
+                case Key.Enter:
+                {
+                    if (page.results.Count != 0)
+                    {
+                        Context.CurrentPage = new AfterTestPage(Context,page,page.userAnswers);
+                    }
+                    break;
+                }
             }
         }
-        
+        public void AfterTestPageHandler(object sender, KeyEventArgs e)
+        {
+            AfterTestPage page = (AfterTestPage)Context.CurrentPage;
+            switch (e.Key)
+            {
+                case Key.Escape:
+                {
+                    if (!page.isPopupOpen)
+                    {
+                        Context.CurrentPage = page.Caller;
+                    }
+                    page.OpenClosePopup(e);
+                    break;
+                }
+                case Key.Space:
+                {
+                    page.OpenClosePopup(e);
+                    break;
+                }
+                case Key.Enter:
+                {
+                 
+                    break;
+                }
+            }
+        }
     }
 }

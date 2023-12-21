@@ -28,14 +28,61 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\AboutImage.jpg" />
+    <Resource Include="Icons\AboutImage.jpg" />
     <None Remove="Images\right.png" />
-    <Resource Include="Images\right.png" />
+    <Resource Include="Icons\right.png" />
     <None Remove="Images\wrong.png" />
-    <Resource Include="Images\wrong.png" />
-    <AdditionalFiles Include="PDD.db">
+    <Resource Include="Icons\wrong.png" />
+    <AdditionalFiles Include="PDD.db" />
+    <None Remove="Icons\windowIcon.png" />
+    <Resource Include="Icons\windowIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Q1.jpg" />
+    <Content Include="Images\Q1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AdditionalFiles>
+    </Content>
+    <None Remove="Images\Q2.jpg" />
+    <Content Include="Images\Q2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q4.jpg" />
+    <Content Include="Images\Q4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q3.jpg" />
+    <Content Include="Images\Q3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q5.jpg" />
+    <Content Include="Images\Q5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q6.jpg" />
+    <Content Include="Images\Q6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q7.jpg" />
+    <Content Include="Images\Q7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q8.jpg" />
+    <Content Include="Images\Q8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q9.jpg" />
+    <Content Include="Images\Q9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Q10.jpg" />
+    <Content Include="Images\Q10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="activationconfig.json" />
+    <Content Include="activationconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

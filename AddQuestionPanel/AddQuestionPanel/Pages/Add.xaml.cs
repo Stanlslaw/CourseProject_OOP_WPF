@@ -14,6 +14,7 @@ public partial class Add : Page
 {
     public List<Topic> Topics;
     public string QuestionImagePath { get; set; } = null;
+    public string QuestionImageLocalPath { get; set; } = null;
     public MainViewModel Context;
     public Add(MainViewModel context)
     {
@@ -47,7 +48,7 @@ public partial class Add : Page
 
     public string GetQuestionImage()
     {
-        return QuestionImagePath;
+        return QuestionImageLocalPath;
     }
 
     public string GetDescText()
@@ -77,6 +78,7 @@ public partial class Add : Page
         if (openFileDialog.ShowDialog() == true)
         {
           QuestionImagePath = openFileDialog.FileName;
+          QuestionImageLocalPath ="\\Images\\"+Path.GetFileName(QuestionImagePath);
         }
 
         QuestionImage.Source = new BitmapImage(new Uri(QuestionImagePath));

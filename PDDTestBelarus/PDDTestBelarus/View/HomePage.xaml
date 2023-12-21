@@ -71,7 +71,7 @@
                       <TextBlock Grid.Row="0"  Foreground="Black" Padding="8 0 " VerticalAlignment="Center">
                           Выберите режим
                       </TextBlock>
-                      <UniformGrid x:Name="HomeMenu" Grid.Row="1"  Background="#3c63ff"  Columns="1">
+                      <UniformGrid x:Name="HomeMenu" Grid.Row="1" Rows="4"  Background="#3c63ff"  Columns="1">
                           <Border  BorderThickness="10 20">
                           <TextBlock Grid.Row="0"   FontSize="16" FontWeight="Medium" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">
                               Контроль по случайному билету
@@ -80,19 +80,9 @@
                           </Border>
                           <Border  BorderThickness="10 20">
                           <TextBlock Grid.Row="1" FontSize="16" FontWeight="Medium" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">
-                              Выбрать контрольный билет
+                              Выбрать контрольный билет по теме
                           </TextBlock>
                           </Border>
-                          <Border  BorderThickness="10 20">
-                          <TextBlock Grid.Row="2"  FontSize="16" FontWeight="Medium" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">
-                              Билет по определенной теме 
-                          </TextBlock>      
-                              </Border>
-                          <Border  BorderThickness="10 20">
-                          <TextBlock Grid.Row="3" FontSize="16" FontWeight="Medium" TextAlignment="Center" VerticalAlignment="Center" Foreground="White">
-                              Экзамен по все темам
-                          </TextBlock>
-                        </Border>
                       </UniformGrid>
                   </Grid>
                 </Border>

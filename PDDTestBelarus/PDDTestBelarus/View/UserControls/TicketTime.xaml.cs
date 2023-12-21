@@ -8,7 +8,7 @@ namespace PDDTestBelarus.View.UserControls;
 public partial class TicketTime : UserControl
 {
     private DispatcherTimer timer;
-    private int elapsedTime = 15 * 60;
+    public int elapsedTime = 1 * 15;
     private Action TimerStopAction;
     public TicketTime(bool needTimer,Action onTimerStop=null)
     {
@@ -41,15 +41,16 @@ public partial class TicketTime : UserControl
         if (elapsedTime == 0)
         {
             StopTimer();
+            TimerStopAction?.Invoke();
         }
     }
 
-    public void StopTimer()
+    public int StopTimer()
     {
         timer.Stop();
         timer.Tick -= ChangeTime;
         Minutes.Text = "--";
         Seconds.Text = "--";
-        TimerStopAction?.Invoke();
+        return elapsedTime;
     }
 }
