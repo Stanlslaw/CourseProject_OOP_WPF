@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oT3j7ybBmGzHmQly9ay1UIRfi362gyFWyfujuWjUAOn7ZmWZuufDLOz2VgEQEvyIBpD8L9h35bKDEqHui0KPAA==",
+  "dgSpecHash": "xRIB/+UTzuNRlxfwTKbOAWlvTiTcL9uSIivDopL51WYYXFJqEJfksoFCKCQipmsE2Fsc2LfYtZJzduRIjlo0zQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\stass\\Desktop\\Kursach\\CourseProject_OOP_WPF\\KeyServer\\KeyServer\\KeyServer\\KeyServer.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\stass\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\stass\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\stass\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\stass\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\stass\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\stass\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
     "C:\\Users\\stass\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",

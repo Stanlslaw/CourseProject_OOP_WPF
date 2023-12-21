@@ -8,15 +8,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pdd.db")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q3.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q4.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q5.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q6.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q7.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q8.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q9.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/q10.jpg")]
 
 

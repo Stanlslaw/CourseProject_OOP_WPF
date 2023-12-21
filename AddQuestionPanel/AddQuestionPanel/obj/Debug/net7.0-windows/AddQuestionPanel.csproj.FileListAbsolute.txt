@@ -68,13 +68,3 @@ C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestio
 C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\obj\Debug\net7.0-windows\Pages\Add.baml
 C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\PDD.db
 C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\obj\Debug\net7.0-windows\AddQuestionPanel_Content.g.cs
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q1.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q2.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q3.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q4.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q5.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q6.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q7.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q8.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q9.jpg
-C:\Users\stass\Desktop\Kursach\CourseProject_OOP_WPF\AddQuestionPanel\AddQuestionPanel\bin\Debug\net7.0-windows\Images\Q10.jpg

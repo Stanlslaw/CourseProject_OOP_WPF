@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using KeyServer;
 using Newtonsoft.Json;
 using PDDTestBelarus.Models;
 
@@ -12,14 +13,22 @@ namespace PDDTestBelarus;
 
 public partial class ActivationWindow : Window
 {
-    private UUID _uuid;
+    private AuthorizeData _authorizeData;
     public ActivationWindow()
     {
-        _uuid=JsonConvert.DeserializeObject<UUID>(File.ReadAllText("activationconfig.json"));
-        if (_uuid.uuid == null)
+        _authorizeData=JsonConvert.DeserializeObject<AuthorizeData>(File.ReadAllText("activationconfig.json"));
+        if (_authorizeData.uuid == null)
         {
-            _uuid.uuid =Convert.ToString(Guid.NewGuid());
-            File.WriteAllText("activationconfig.json", JsonConvert.SerializeObject(_uuid));
+            _authorizeData.uuid =Convert.ToString(Guid.NewGuid());
+            File.WriteAllText("activationconfig.json", JsonConvert.SerializeObject(_authorizeData));
+        }
+
+        if (_authorizeData.hash == MD5Hash.ComputeMD5Hash(_authorizeData.uuid, "secret"))
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            // Закрытие текущего окна
+            Close();
         }
         InitializeComponent();
         KeyBox.Focus();
@@ -56,23 +65,53 @@ public partial class ActivationWindow : Window
     }
     public async void SendKey(object sender, EventArgs e)
     {
+        MainWindow mainWindow;
         if (KeyBox.Text == "00000000-0000-0000-0000-000000000000")
         {
-            MainWindow mainWindow = new MainWindow();
+            mainWindow = new MainWindow();
             mainWindow.Show();
             // Закрытие текущего окна
          Close();
          return;
         }
 
-        HttpClient client = new HttpClient();
-        HttpResponseMessage res = await client.GetAsync($"http://localhost:5000/api/Key/activekey?key={KeyBox.Text}");
-        string resBody = await res.Content.ReadAsStringAsync();
-        if (!Convert.ToBoolean(resBody))
+        KeyBox.IsEnabled = false;
+        SendButton.IsEnabled = false;
+        try
         {
-            ErrorMessage.Text = "Неверный код или данный код уже активирован";
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res =
+                await client.GetAsync(
+                    $"http://localhost:5000/api/Key/activekey?key={KeyBox.Text}&uuid={_authorizeData.uuid}");
+            string resBody = await res.Content.ReadAsStringAsync();
+            AuthorizeData resAuthorize = JsonConvert.DeserializeObject<AuthorizeData>(resBody);
+            if (resAuthorize.hash == null)
+            {
+                ErrorMessage.Text = "Неверный код или данный код уже активирован";
+                KeyBox.IsEnabled = true;
+                SendButton.IsEnabled = true;
+            }
+            else
+            {
+                mainWindow = new MainWindow();
+                mainWindow.Show();
+                // Закрытие текущего окна
+                Close();
+                File.WriteAllText("activationconfig.json",JsonConvert.SerializeObject(resAuthorize));
+            }
         }
-        MessageBox.Show(resBody);
+        catch (HttpRequestException ex)
+        {
+            MessageBox.Show("Проблема с подключением к серверу");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+     
+        KeyBox.IsEnabled = true;
+        SendButton.IsEnabled = true;
+       
     }
     
     

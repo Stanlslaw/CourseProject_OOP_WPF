@@ -21,12 +21,20 @@ public partial class TestPage : Page
     public TicketTime ticketTime;
     public int elapsedTime;
     public List<int> userAnswers = new List<int>();
-    public TestPage(MainViewModel context)
+    public TestPage(MainViewModel context,int topicId)
     {
         InitializeComponent();
         Context = context;
         results = new List<QuestionData>();
-        questions= context.GetQuestionsForTest();
+        if (topicId > 0)
+        {
+            questions= context.GetQuestionsForTest(topicId);
+        }
+        else
+        {
+            questions= context.GetRandomQuestionsForTest();
+        }
+       
         question = new Question(questions[0],questions[0].asnwers,userAnswers);
         bottomTestHint = new BottomTestHint();
         numPanel = new TopQuestionNumPanel(10);

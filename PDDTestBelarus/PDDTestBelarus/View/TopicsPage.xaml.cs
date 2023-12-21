@@ -57,7 +57,7 @@ public partial class TopicsPage : Page
             Border border = new Border();
             border.BorderThickness = new Thickness(10, 10, 10, 10);
             TextBlock tb = new TextBlock();
-            tb.Foreground = Brushes.Black;
+            tb.Foreground = Brushes.White;
             tb.VerticalAlignment = VerticalAlignment.Center;
             tb.HorizontalAlignment = HorizontalAlignment.Center;
             tb.FontWeight = FontWeights.Medium;
@@ -67,7 +67,7 @@ public partial class TopicsPage : Page
             TopicsMenu.Children.Add(border);
         }
     }
-    public async void OnArrowUpDown(object sender, KeyEventArgs e)
+    public void OnArrowUpDown(object sender, KeyEventArgs e)
     {
         if (e.Key == Key.Enter)
         {

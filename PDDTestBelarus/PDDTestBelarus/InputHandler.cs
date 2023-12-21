@@ -98,7 +98,7 @@ namespace PDDTestBelarus
                 {
                     if (page.SelectedItem == 0)
                     {
-                        Context.CurrentPage = new TestPage(Context);
+                        Context.CurrentPage = new TestPage(Context,0);
                     }
                     else if (page.SelectedItem == 1)
                     {
@@ -130,10 +130,8 @@ namespace PDDTestBelarus
                 }
                 case Key.Enter:
                 {
-                    if (page.SelectedItem == 0)
-                    {
-                        Context.CurrentPage = new TestPage(Context);
-                    }
+                    
+                    Context.CurrentPage = new TestPage(Context,page.SelectedItem+1);
                     break;
                 }
             }

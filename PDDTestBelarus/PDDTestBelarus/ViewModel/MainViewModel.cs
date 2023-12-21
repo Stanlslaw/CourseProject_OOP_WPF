@@ -47,10 +47,10 @@ public class MainViewModel:ViewModelBase
         db = new PddContext();
     }
 
-    public List<QuestionData> GetQuestionsForTest()
+    public List<QuestionData> GetQuestionsForTest(int topicId)
     {
        List<QuestionData> qdList= new ();
-       List<Question> questions=  db.Questions.FromSqlRaw("SELECT * FROM Questions ORDER BY RANDOM()").Take(10).ToList();
+       List<Question> questions=  db.Questions.FromSqlRaw($"SELECT * FROM Questions where TopicId={topicId} ORDER BY RANDOM()").Take(10).ToList();
        foreach (var question in questions)
        {
            QuestionData qd = new();
@@ -60,5 +60,19 @@ public class MainViewModel:ViewModelBase
            qdList.Add(qd);
        }
        return (qdList);
+    }
+    public List<QuestionData> GetRandomQuestionsForTest()
+    {
+        List<QuestionData> qdList= new ();
+        List<Question> questions=  db.Questions.FromSqlRaw($"SELECT * FROM Questions ORDER BY RANDOM()").Take(10).ToList();
+        foreach (var question in questions)
+        {
+            QuestionData qd = new();
+            qd.Question = new Question(){Id=question.Id,Image = question.Image,QuestionText = RSAEncryption.Decrypt(question.QuestionText),TopicId = question.TopicId};
+            qd.questionDescription = db.QuestionDescriptions.FirstOrDefault(q => q.QuestionId == qd.Question.Id);
+            qd.asnwers = db.Answers.Where((a) => a.QuestionId == qd.Question.Id).ToList();
+            qdList.Add(qd);
+        }
+        return (qdList);
     }
 }
