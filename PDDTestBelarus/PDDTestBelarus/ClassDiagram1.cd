@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PDDTestBelarus.Models.Answer">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAIAAAQAAAA=</HashCode>
+      <FileName>Models\Answer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.Models.AuthorizeData">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AuthorizeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.Models.PddContext">
+    <Position X="8" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAQAAAAAAAAAAAAkAAAAAAEQAAAACAAAAA=</HashCode>
+      <FileName>Models\PddContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.Models.Question">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAgAAAAAACAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.Models.QuestionData">
+    <Position X="16.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAACAAAABAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Models\QuestionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.Models.QuestionDescription">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQQAAAA=</HashCode>
+      <FileName>Models\QuestionDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.Models.Topic">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Topic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.View.UserControls.BottomTestHint" BaseTypeListCollapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgQAgAAAQAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserControls\BottomTestHint.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.UserControls.FastResult" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAIAAAAAAAQQAAAAAAAAQAAAAA=</HashCode>
+      <FileName>View\UserControls\FastResult.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.UserControls.Question" BaseTypeListCollapsed="true">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAUAAAAAAAAAAAAAAAAAIAAAEBAAAAAAAABQAAgkEA=</HashCode>
+      <FileName>View\UserControls\Question.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.UserControls.ResultTable" BaseTypeListCollapsed="true">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAIAAAAAEAAAAgAAIAAAQAAAAA=</HashCode>
+      <FileName>View\UserControls\ResultTable.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.UserControls.TicketTime" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAAAAAAAAAAAIAAAAAAABAAAAAgAAAAA=</HashCode>
+      <FileName>View\UserControls\TicketTime.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.UserControls.TopQuestionNumPanel" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAiAAAAAQAAAQAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserControls\TopQuestionNumPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.AboutPage" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AboutPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.AfterTestPage" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIQAAgAQAgAAAAABAAAAAAAAAAIAAAAAAAAQAAA=</HashCode>
+      <FileName>View\AfterTestPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.ExitPage" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAAAAAAAQAIABAAABAAAAAAAAA=</HashCode>
+      <FileName>View\ExitPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.HomePage" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAAAAAAAQAIABAAABAAAAAAAAA=</HashCode>
+      <FileName>View\HomePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.ResultPage" BaseTypeListCollapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABBAAAAAAAAAAUAIABgAABAAAAAAAAA=</HashCode>
+      <FileName>View\ResultPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.TestPage" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAwgAIgAAAAAAIAAAAEQAAAoAAAgQAAAAAAA=</HashCode>
+      <FileName>View\TestPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.View.TopicsPage" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAgAAABAAAAAACAEAAQAIABAAABAAAAAAAAA=</HashCode>
+      <FileName>View\TopicsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.ViewModel.MainViewModel">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAEAAAAAAAQAAAQAAEAAIABACAAAAAI=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.ActivationWindow" BaseTypeListCollapsed="true">
+    <Position X="1" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAACAAAAAAAAAAAABAAAAIAAAAAAA=</HashCode>
+      <FileName>ActivationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.App">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.InputHandler">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAkAgAAABAAAKAAACAAIABAAAAAIAAQAAAAAAA=</HashCode>
+      <FileName>InputHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDDTestBelarus.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAIAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.RelayCommand" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PDDTestBelarus.RSAEncryption">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RSAEncrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyServer.MD5Hash">
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MD5Hash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
